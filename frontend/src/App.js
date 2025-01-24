@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemList from './components/ItemList';
+import ItemList from './componets/ItemList';
 
 function App() {
   return (
