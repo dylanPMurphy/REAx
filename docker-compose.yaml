@@ -28,7 +28,7 @@ services:
       - app_network
 
   db:
-    
+    command: postgres -c 'listen_addresses=*'
     image: postgres
     environment:
       DNS_RESOLVER: 127.0.0.11
