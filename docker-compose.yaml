@@ -30,6 +30,8 @@ services:
   db:
     command: postgres -c 'listen_addresses=*'
     image: postgres
+    ports:
+      - "5432:5432"
     environment:
       DNS_RESOLVER: 127.0.0.11
       POSTGRES_DB: mydb
