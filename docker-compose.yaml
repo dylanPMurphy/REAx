@@ -4,8 +4,8 @@ services:
   backend:
     build: ./backend
     volumes:
-      - ./backend:/app  # Ensure the path is correct relative to docker-compose
-    working_dir: /backend/reax  # Ensure this matches the correct folder
+      - ./backend/:/app  # Ensure the path is correct relative to docker-compose
+    working_dir: /app/reax  # Ensure this matches the correct folder
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
