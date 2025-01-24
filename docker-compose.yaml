@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   backend:
+    environment:
+      - DNS_RESOLVER=127.0.0.11
     build: ./backend
     volumes:
       - ./backend/:/app  # Ensure the path is correct relative to docker-compose
@@ -13,6 +15,8 @@ services:
       - db
 
   frontend:
+    environment:
+        - DNS_RESOLVER=127.0.0.11
     build: ./frontend
     ports:
       - "3000:3000"
@@ -22,8 +26,10 @@ services:
       - app_network
 
   db:
+    
     image: postgres
     environment:
+      DNS_RESOLVER: 127.0.0.11
       POSTGRES_DB: mydb
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
