@@ -3,8 +3,14 @@ version: '3.8'
 services:
   backend:
     build: ./backend
-    networks:
-      - app_network
+    volumes:
+      - ./backend:/app  # Ensure the path is correct relative to docker-compose
+    working_dir: /backend/reax  # Ensure this matches the correct folder
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
 
   frontend:
     build: ./frontend
