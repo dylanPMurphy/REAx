@@ -14,7 +14,10 @@ services:
 
   frontend:
     build: ./frontend
-    working_dir: /app/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
     networks:
       - app_network
 

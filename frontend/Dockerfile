@@ -1,5 +1,7 @@
 FROM node:16
 WORKDIR /app
-COPY . .
+COPY package.json package-lock.json ./
 RUN npm install
-CMD ["npm", "start"]
+COPY . .
+RUN npm run build
+CMD ["npx", "serve", "-s", "build"]
