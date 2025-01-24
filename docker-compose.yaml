@@ -8,7 +8,7 @@ services:
     volumes:
       - ./backend/:/app  # Ensure the path is correct relative to docker-compose
     working_dir: /app/reax  # Ensure this matches the correct folder
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     depends_on:
