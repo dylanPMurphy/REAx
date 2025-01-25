@@ -6,9 +6,9 @@ const ItemList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost/api/items/')
+        axios.get('/api/items/')
             .then(response => setItems(response.data))
-            .catch(error => console.error(error));
+            .catch(error => console.error('Error fetching items:', error));
     }, []);
 
     return (
@@ -22,7 +22,7 @@ const ItemList = () => {
                 </tr>
             </thead>
             <tbody>
-                {items.map(item => (
+                {items.map((item) => (
                     <tr key={item.id}>
                         <td>{item.name}</td>
                         <td>{new Date(item.date_modified).toLocaleString()}</td>
