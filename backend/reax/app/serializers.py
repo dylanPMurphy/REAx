@@ -7,7 +7,7 @@ class ItemSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class UserSerializer(ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'password']
