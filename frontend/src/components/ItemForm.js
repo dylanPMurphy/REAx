@@ -8,7 +8,7 @@ const ItemForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/items/', { name, note, author: 1 })
+        axios.post('/items/', { name, note, author: 1 })
             .then(response => console.log('Item added:', response))
             .catch(error => console.error('Error:', error));
     };

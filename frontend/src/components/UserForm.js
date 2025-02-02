@@ -8,7 +8,7 @@ const UserForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/users/', { username, password })
+        axios.post('/users/', { username, password })
             .then(response => console.log('User added:', response))
             .catch(error => console.error('Error:', error));
     };

@@ -6,7 +6,7 @@ const ItemList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/items/')
+        axios.get('/items/')
             .then(response => setItems(response.data))
             .catch(error => console.error('Error fetching items:', error));
     }, []);
