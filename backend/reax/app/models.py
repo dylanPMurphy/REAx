@@ -9,3 +9,13 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Item(models.Model):
+    username = models.CharField(max_length=255)
+    password = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.username
+    
+    
